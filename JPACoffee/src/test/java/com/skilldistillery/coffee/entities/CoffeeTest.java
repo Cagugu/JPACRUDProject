@@ -48,7 +48,7 @@ private Coffee coffee;
 	@DisplayName("Testing coffee entity mapping")
 	void test1() {
 		assertNotNull(coffee);
-		assertEquals("Caramel Macchiato", coffee.getName());
+		assertEquals("S Iced Latte", coffee.getName());
 	}
 
 

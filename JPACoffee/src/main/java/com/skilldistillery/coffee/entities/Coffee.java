@@ -27,9 +27,14 @@ public class Coffee {
 	private String hotOrIced;
 
 	private double cost;
-	
-	@Column(name="size_in_oz")
+
+	@Column(name = "size_in_oz")
 	private Integer sizeInOunces;
+
+	private String flavor;
+
+	@Column(name = "milk_option")
+	private String milkOption;
 
 	public Coffee() {
 		super();
@@ -38,15 +43,15 @@ public class Coffee {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Coffee info: Menu Item: ");
+		builder.append("Coffee [id=");
 		builder.append(id);
-		builder.append(", ");
+		builder.append(", name=");
 		builder.append(name);
-		builder.append(", Size: ");
+		builder.append(", size=");
 		builder.append(size);
-		builder.append(", Total: ");
-		builder.append(cost);
-		builder.append(". ");
+		builder.append(", hotOrIced=");
+		builder.append(hotOrIced);
+
 		return builder.toString();
 	}
 
@@ -74,19 +79,19 @@ public class Coffee {
 		this.size = size;
 	}
 
-	public int getEspressoAmountOz() {
+	public Integer getEspressoAmountOz() {
 		return espressoAmountOz;
 	}
 
-	public void setEspressoAmountOz(int espressoAmountOz) {
+	public void setEspressoAmountOz(Integer espressoAmountOz) {
 		this.espressoAmountOz = espressoAmountOz;
 	}
 
-	public int getMilkAmountOz() {
+	public Integer getMilkAmountOz() {
 		return milkAmountOz;
 	}
 
-	public void setMilkAmountOz(int milkAmountOz) {
+	public void setMilkAmountOz(Integer milkAmountOz) {
 		this.milkAmountOz = milkAmountOz;
 	}
 
@@ -106,12 +111,28 @@ public class Coffee {
 		this.cost = cost;
 	}
 
-	public int getSizeInOunces() {
+	public Integer getSizeInOunces() {
 		return sizeInOunces;
 	}
 
-	public void setSizeInOunces(int sizeInOunces) {
+	public void setSizeInOunces(Integer sizeInOunces) {
 		this.sizeInOunces = sizeInOunces;
+	}
+
+	public String getFlavor() {
+		return flavor;
+	}
+
+	public void setFlavor(String flavor) {
+		this.flavor = flavor;
+	}
+
+	public String getMilkOption() {
+		return milkOption;
+	}
+
+	public void setMilkOption(String milkOption) {
+		this.milkOption = milkOption;
 	}
 
 }

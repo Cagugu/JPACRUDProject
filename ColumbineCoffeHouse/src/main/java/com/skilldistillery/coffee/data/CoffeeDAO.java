@@ -9,4 +9,5 @@ public interface CoffeeDAO {
 	Coffee findById(int id);
 	List<Coffee> showFullMenu();
 	List<Coffee> findByNameContaining(String keyword);
+	Coffee createYourOwn(Coffee coffee);
 }

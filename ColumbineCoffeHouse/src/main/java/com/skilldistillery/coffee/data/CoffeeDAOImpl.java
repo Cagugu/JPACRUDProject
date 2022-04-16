@@ -40,6 +40,13 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 		List<Coffee> keywordMatch = em.createQuery(query, Coffee.class).setParameter("name", "%" +keyword+ "%").getResultList();	
 		return keywordMatch;
 	}
+
+
+	@Override
+	public Coffee createYourOwn(Coffee coffee) {
+		em.persist(coffee);
+		return coffee;
+	}
 	
 	
 

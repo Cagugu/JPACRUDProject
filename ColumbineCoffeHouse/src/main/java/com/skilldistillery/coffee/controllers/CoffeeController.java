@@ -30,4 +30,10 @@ public class CoffeeController {
 		return "coffee/coffeeview";
 	}
 	
+	@RequestMapping(path="createCoffee.do")
+	public String createCoffee(Coffee coffee, Model model) {
+		Coffee newBrew = dao.createYourOwn(coffee);
+		model.addAttribute("coffee", newBrew);
+		return "home";
+	}
 }
