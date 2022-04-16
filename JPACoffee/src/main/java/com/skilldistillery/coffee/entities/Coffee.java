@@ -12,40 +12,40 @@ public class Coffee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String name;
-	
+
 	private String size;
-	
-	@Column(name="espresso_amount_oz")
+
+	@Column(name = "espresso_amount_oz")
 	private int espressoAmountOz;
-	@Column(name="milk_amount_oz")
+
+	@Column(name = "milk_amount_oz")
 	private int milkAmountOz;
+
+	@Column(name = "hot_or_iced")
+	private String hotOrIced;
+
+	private double cost;
 
 	public Coffee() {
 		super();
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Coffee [id=");
+		builder.append("Coffee info: Menu Item: ");
 		builder.append(id);
-		builder.append(", name=");
+		builder.append(", ");
 		builder.append(name);
-		builder.append(", size=");
+		builder.append(", Size: ");
 		builder.append(size);
-		builder.append(", espressoAmountOz=");
-		builder.append(espressoAmountOz);
-		builder.append(", milkAmountOz=");
-		builder.append(milkAmountOz);
-		builder.append("]");
+		builder.append(", Total: ");
+		builder.append(cost);
+		builder.append(". ");
 		return builder.toString();
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -86,5 +86,21 @@ public class Coffee {
 	public void setMilkAmountOz(int milkAmountOz) {
 		this.milkAmountOz = milkAmountOz;
 	}
-	
+
+	public String getHotOrIced() {
+		return hotOrIced;
+	}
+
+	public void setHotOrIced(String hotOrIced) {
+		this.hotOrIced = hotOrIced;
+	}
+
+	public double getCost() {
+		return cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+
 }

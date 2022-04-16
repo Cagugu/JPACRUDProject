@@ -1,5 +1,7 @@
 package com.skilldistillery.coffee.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -21,5 +23,26 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 	public Coffee findById(int coffeeId) {
 		return em.find(Coffee.class, coffeeId); //For example, rn id 1 is for CarMac
 	}
+
+
+	@Override
+	public List<Coffee> showFullMenu() {
+	String query = "SELECT c from Coffee c";
+	List<Coffee> fullMenu = em.createQuery(query, Coffee.class).getResultList();
+	
+		return fullMenu;
+	}
+
+
+	@Override
+	public List<Coffee> findByNameContaining(String keyword) {
+		String query = "SELECT c from Coffee c WHERE c.name LIKE %:name%";
+		
+		List<Coffee> keywordMatch = em.createQuery(query, Coffee.class).setParameter("name", keyword).getResultList();
+				
+		return null;
+	}
+	
+	
 
 }

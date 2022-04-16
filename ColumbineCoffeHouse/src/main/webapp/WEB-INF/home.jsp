@@ -11,6 +11,7 @@
 
 <h1>Welcome to Coffee Creations by Columbine Coffee House</h1>
 
-${DEBUG}
+
+
 </body>
 </html>
