@@ -20,6 +20,7 @@ private EntityManager em;
 private Coffee coffee;
 
 
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("JPACoffee");
@@ -50,4 +51,7 @@ private Coffee coffee;
 		assertEquals("Caramel Macchiato", coffee.getName());
 	}
 
+
+	
+	
 }

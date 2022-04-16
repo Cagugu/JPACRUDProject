@@ -20,11 +20,12 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 	
 	
 	@Override
-	public Coffee findById(int coffeeId) {
-		return em.find(Coffee.class, coffeeId); //For example, rn id 1 is for CarMac
+	public Coffee findById(int id) {
+		return em.find(Coffee.class, id); //For example, rn id 1 is for CarMac
 	}
 
-
+	
+	//Mehtod checked, functions as expected
 	@Override
 	public List<Coffee> showFullMenu() {
 	String query = "SELECT c from Coffee c";
@@ -33,14 +34,11 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 		return fullMenu;
 	}
 
-
 	@Override
 	public List<Coffee> findByNameContaining(String keyword) {
-		String query = "SELECT c from Coffee c WHERE c.name LIKE %:name%";
-		
-		List<Coffee> keywordMatch = em.createQuery(query, Coffee.class).setParameter("name", keyword).getResultList();
-				
-		return null;
+		String query = "SELECT c from Coffee c WHERE c.name LIKE :name";
+		List<Coffee> keywordMatch = em.createQuery(query, Coffee.class).setParameter("name", "%" +keyword+ "%").getResultList();	
+		return keywordMatch;
 	}
 	
 	

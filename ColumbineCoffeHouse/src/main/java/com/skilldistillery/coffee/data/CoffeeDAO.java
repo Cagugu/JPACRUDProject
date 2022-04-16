@@ -6,7 +6,7 @@ import com.skilldistillery.coffee.entities.Coffee;
 
 public interface CoffeeDAO {
 
-	Coffee findById(int coffeeId);
+	Coffee findById(int id);
 	List<Coffee> showFullMenu();
 	List<Coffee> findByNameContaining(String keyword);
 }

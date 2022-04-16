@@ -18,15 +18,18 @@ public class Coffee {
 	private String size;
 
 	@Column(name = "espresso_amount_oz")
-	private int espressoAmountOz;
+	private Integer espressoAmountOz;
 
 	@Column(name = "milk_amount_oz")
-	private int milkAmountOz;
+	private Integer milkAmountOz;
 
 	@Column(name = "hot_or_iced")
 	private String hotOrIced;
 
 	private double cost;
+	
+	@Column(name="size_in_oz")
+	private Integer sizeInOunces;
 
 	public Coffee() {
 		super();
@@ -101,6 +104,14 @@ public class Coffee {
 
 	public void setCost(double cost) {
 		this.cost = cost;
+	}
+
+	public int getSizeInOunces() {
+		return sizeInOunces;
+	}
+
+	public void setSizeInOunces(int sizeInOunces) {
+		this.sizeInOunces = sizeInOunces;
 	}
 
 }
