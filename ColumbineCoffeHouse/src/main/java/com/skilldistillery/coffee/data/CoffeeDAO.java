@@ -10,4 +10,5 @@ public interface CoffeeDAO {
 	List<Coffee> showFullMenu();
 	List<Coffee> findByNameContaining(String keyword);
 	Coffee createYourOwn(Coffee coffee);
+	Coffee updateCoffee(int id, Coffee coffee);
 }

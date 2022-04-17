@@ -1,16 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Make Your Own Coffee Creation</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h2>Plenty of options to make the perfect cup!</h2>
-	<h4>Please make your selections:</h4>
 
-	<form action="createCoffee.do" method="POST">
+<form action="updateCoffee.do" method="POST">
+		<input type= "hidden" name= "id" value = "${coffee.id }"/>
 
 		<Label>Name your creation:</Label> <input type="text" name="name" /><br>
+
+		
 
 		<label for="size">Select a size:</label> <br> 
 		<input type="radio" name="size" id="small" value= "Small"/>
@@ -51,5 +54,7 @@
 			<option value="Whole">Whole</option>
 		</select><br> <input type="submit" value="Submit">
 	</form>
+	
+
 </body>
 </html>

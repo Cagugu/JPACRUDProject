@@ -8,25 +8,38 @@
 <title>Columbine Coffee House</title>
 </head>
 <style>
-.button {background-color: #e7e7e7; color: black;
-  padding: 5px 10px;
-  text-align: center;
-font-size: 16px; }
+.button {
+	background-color: #e7e7e7;
+	color: black;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 16px;
+}
 </style>
 <body>
 
 	<h1>Columbine Coffee House</h1>
 
-	<h3>Search by menu item number:</h3>
-	<form action="getCoffee.do" method="GET">
-		<input type="text" name=id /> <input type="submit" name="Show Item" />
-	</form>
-	
 	<div>
-	<button class = "button" onclick="document.location='createcoffee.html'">Create Your Own Coffee</button>
+		<h3>Search by menu item number:</h3>
+		<form action="getCoffee.do" method="GET">
+			<input type="text" name=id /> <input type="submit" name="Show Item" />
+		</form>
 	</div>
-	
-	
+	<div>
+		<h3>Search menu with keyword:</h3>
+		<form action="findKeywordCoffee.do" method="GET">
+			<input type="text" name=keyword /> <input type="submit"
+				name="Show List" />
+		</form>
+	</div>
+
+	<div>
+		<button class="button" onclick="document.location='createcoffee.html'">Create
+			Your Own Coffee</button>
+	</div>
+
+	<div>
 	<table>
 		<thead>
 			<tr>
@@ -48,7 +61,7 @@ font-size: 16px; }
 
 		</tbody>
 	</table>
-
+</div>
 
 </body>
 </html>

@@ -4,17 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ready to indulge?</title>
+<title>Saving your updates!</title>
 </head>
 <body>
-<h2>You selected: </h2>
-<h4>${coffee.name}: $${coffee.cost}</h4>
+<h2>Your updated coffee creation: </h2>
+<h4>Name: ${coffee.name}, Size: ${coffee.size}, Steamy or Icey: ${coffee.hotOrIced }, Flavor: ${coffee.flavor }, Milk Choice: ${coffee.milkOption} </h4>
 <div><form action="home.do" method = "POST">
 <input class = "btn btn-primary" type= "submit" value = "Home"> </form></div>
-
-<div><form action="update.do" method = "GET">
-<button type="submit" name= "id" value = "${coffee.id}"> Update Coffee</button>
-</form> </div>
-
 </body>
 </html>

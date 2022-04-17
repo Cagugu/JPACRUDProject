@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.coffee.data.CoffeeDAO;
 import com.skilldistillery.coffee.entities.Coffee;
@@ -29,11 +30,34 @@ public class CoffeeController {
 		model.addAttribute("coffee", coffee);
 		return "coffee/coffeeview";
 	}
+	@RequestMapping(path= "findKeywordCoffee.do")
+	public String coffeeFromKeywordSearch(String keyword, Model model) {
+		List<Coffee> keywordMatch = dao.findByNameContaining(keyword);
+		model.addAttribute("keywordMatch", keywordMatch);
+		return "findbykeyword";
+	}
+	
+	
+	@RequestMapping(path="update.do", method=RequestMethod.GET)
+	public String update(Model model, int id) {
+		Coffee coffee = dao.findById(id);
+		model.addAttribute("coffee", coffee);
+		System.out.println("In update.do");
+		return "updatecoffee";
+	}
+	
+	@RequestMapping(path="updateCoffee.do", method=RequestMethod.POST)
+	public String updateCoffee(int id, Coffee coffee, Model model) {
+		System.out.println("In updateCoffee.do");
+		Coffee newBrew = dao.updateCoffee(id, coffee);
+		model.addAttribute("coffee", newBrew);
+		return "coffee/updated";
+	}
 	
 	@RequestMapping(path="createCoffee.do")
 	public String createCoffee(Coffee coffee, Model model) {
 		Coffee newBrew = dao.createYourOwn(coffee);
 		model.addAttribute("coffee", newBrew);
-		return "home";
+		return "coffee/coffeeview";
 	}
 }

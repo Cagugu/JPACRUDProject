@@ -47,6 +47,19 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 		em.persist(coffee);
 		return coffee;
 	}
+
+
+	@Override
+	public Coffee updateCoffee(int id, Coffee coffee) {
+		Coffee updated = em.find(Coffee.class, id);
+		updated.setName(coffee.getName());
+		updated.setSize(coffee.getSize());
+		updated.setHotOrIced(coffee.getHotOrIced());
+		updated.setFlavor(coffee.getFlavor());
+		updated.setMilkOption(coffee.getMilkOption());
+		em.flush();
+		return updated;
+	}
 	
 	
 
