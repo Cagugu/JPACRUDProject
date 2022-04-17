@@ -36,8 +36,8 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 
 	@Override
 	public List<Coffee> findByNameContaining(String keyword) {
-		String query = "SELECT c from Coffee c WHERE c.name LIKE :name";
-		List<Coffee> keywordMatch = em.createQuery(query, Coffee.class).setParameter("name", "%" +keyword+ "%").getResultList();	
+		String query = "SELECT c from Coffee c WHERE name LIKE :keyword";
+		List<Coffee> keywordMatch = em.createQuery(query, Coffee.class).setParameter("keyword", "%" +keyword+ "%").getResultList();	
 		return keywordMatch;
 	}
 
@@ -59,6 +59,22 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 		updated.setMilkOption(coffee.getMilkOption());
 		em.flush();
 		return updated;
+	}
+
+
+	@Override
+	public boolean deleteCoffee(int id) {
+		
+		//need resolution for allowing deletion of primary keys
+		boolean isDeleted = false;
+		Coffee coffee = em.find(Coffee.class, id);
+		if (coffee != null) {
+			em.remove(coffee);
+		}
+		em.flush();
+		isDeleted = !em.contains(coffee);
+		
+		return isDeleted;
 	}
 	
 	

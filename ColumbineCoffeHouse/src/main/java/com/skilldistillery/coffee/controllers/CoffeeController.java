@@ -38,6 +38,13 @@ public class CoffeeController {
 	}
 	
 	
+	@RequestMapping(path="createCoffee.do")
+	public String createCoffee(Coffee coffee, Model model) {
+		Coffee newBrew = dao.createYourOwn(coffee);
+		model.addAttribute("coffee", newBrew);
+		return "coffee/coffeeview";
+	}
+	
 	@RequestMapping(path="update.do", method=RequestMethod.GET)
 	public String update(Model model, int id) {
 		Coffee coffee = dao.findById(id);
@@ -54,10 +61,13 @@ public class CoffeeController {
 		return "coffee/updated";
 	}
 	
-	@RequestMapping(path="createCoffee.do")
-	public String createCoffee(Coffee coffee, Model model) {
-		Coffee newBrew = dao.createYourOwn(coffee);
-		model.addAttribute("coffee", newBrew);
-		return "coffee/coffeeview";
+	
+
+	
+	@RequestMapping(path="deleteCoffee.do", method=RequestMethod.POST)
+	public String deleteCoffee(int id) {
+		Boolean isDeleted = dao.deleteCoffee(id);
+		return "coffee/deleted";
 	}
+	
 }

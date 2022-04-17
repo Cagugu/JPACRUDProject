@@ -11,4 +11,5 @@ public interface CoffeeDAO {
 	List<Coffee> findByNameContaining(String keyword);
 	Coffee createYourOwn(Coffee coffee);
 	Coffee updateCoffee(int id, Coffee coffee);
+	boolean deleteCoffee(int id);
 }

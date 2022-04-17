@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+<c:choose>
 <c:when test="${! empty keywordMatch}">
 <h2>These are the menu items that match your search:</h2>
 	<table>
@@ -26,8 +26,7 @@
 				<tr>
 					<td>${c.id}</td>
 					<td>${c.name}</td>
-					<td>${c.sizeInOunces}</td>
-					<td>${c.cost}</td>
+					
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -40,7 +39,7 @@
 <input type="submit" value= "Go Home">
 </form>
 </c:otherwise>
-
+</c:choose>
 
 </body>
 </html>

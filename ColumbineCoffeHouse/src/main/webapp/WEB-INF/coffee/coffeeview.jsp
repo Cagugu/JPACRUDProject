@@ -15,6 +15,9 @@
 <div><form action="update.do" method = "GET">
 <button type="submit" name= "id" value = "${coffee.id}"> Update Coffee</button>
 </form> </div>
+<div><form action="deleteCoffee.do" method = "POST">
+<button type="submit" name= "id" value = "${coffee.id}"> Delete Coffee</button>
+</form> </div>
 
 </body>
 </html>
