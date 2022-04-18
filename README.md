@@ -1,6 +1,6 @@
 # JPACRUDProject
 
-##About The Project
+## About The Project
 ---
 JPACRUDProject is a Dynamic Web Application that allows the user to perform CRUD operations on a MYSQL database of Coffee objects.
 
@@ -9,7 +9,7 @@ JPACRUDProject is a Dynamic Web Application that allows the user to perform CRUD
           3. Update: Update provided fields associated with an existing Coffee object
           4. Delete: Remove an existing object from the database
 
-###Technologies Used:
+### Technologies Used:
 
           - Spring Tool Suite 4
           - MYSQL
@@ -35,9 +35,9 @@ Users can use the search function to search for Coffees that match their taste w
 
 Via the "Make Your Own Creation" link, users can build their own coffee object with user input values. Their creation is store to the database, and can be accessed and operated on via the same operations mentioned above.
 
-##Contact
+## Contact
 ---
-###Cecelia Guerrero
+### Cecelia Guerrero
 [LinkedIn] (https://www.linkedin.com/in/cecelia-guerrero/)
 [Github] (https://github.com/Cagugu)
 E-mail: guerrero.a.cecelia@gmail.com
