@@ -29,7 +29,7 @@ JPACRUDProject is a Dynamic Web Application that allows the user to perform CRUD
 ![alt text](WebHome.jpg)
 ---
 
-Upon initial access to the webpage, users are presented a homepage. The homepage host a "menu" which is a fill list of Coffee objects from the database. There is a NavBar built into every page within the program to allow for easy access to application functions. Users can access the "Make Your Own Creation", return to the homepage, use the search function, and access social media links.
+Upon initial access to the webpage, users are presented a homepage. The homepage hosts a "menu" which is a full list of Coffee objects from the database. There is a NavBar built into every page within the program to allow for easy access to application functions. Users can access the "Make Your Own Creation", return to the homepage, use the search function, and access social media links.
 
 Users can use the search function to search for Coffees that match their taste with a keyword, or access those already contained in the menu (database) with an id search. Users are able to delete or update Coffee objects by searching with id.
 
