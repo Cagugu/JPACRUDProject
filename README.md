@@ -38,6 +38,6 @@ Via the "Make Your Own Creation" link, users can build their own coffee object w
 ## Contact
 ---
 ### Cecelia Guerrero
-- [LinkedIn] (https://www.linkedin.com/in/cecelia-guerrero/)
-- [Github] (https://github.com/Cagugu)
+- [LinkedIn](https://www.linkedin.com/in/cecelia-guerrero/)
+- [Github](https://github.com/Cagugu)
 - E-mail: guerrero.a.cecelia@gmail.com
