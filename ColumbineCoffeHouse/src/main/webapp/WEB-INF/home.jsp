@@ -36,7 +36,7 @@ background-color: #e0edc5;
 </style>
 <body class= "body">
 
-	<h1>Columbine Coffee House</h1>
+	<h1 style= color:#472d30>Columbine Coffee House</h1>
 
 <%@ include file="bootstrap.jsp" %>
 
@@ -52,7 +52,7 @@ background-color: #e0edc5;
 				<th>Cost:</th>
 			</tr>
 		</thead>
-		<tbody style = background-color:#f6e7cb>
+		<tbody style = background-color:#f6e7cb >
 			<c:forEach var="c" items="${fullMenu}">
 				<tr>
 					<td>${c.id}</td>

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Menu Search</title>
 </head>
-<body>
+<body style = background-color:#e0edc5>
 <%@ include file="bootstrap.jsp" %>
 <c:choose>
 <c:when test="${! empty keywordMatch}">

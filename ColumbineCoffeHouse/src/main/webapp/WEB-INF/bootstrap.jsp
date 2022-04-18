@@ -24,11 +24,22 @@
   background: #3B5998;
   color: white;
 }
+#searchbutton {
+background-color: #f6e7cb;
+color: #582f0e;
+border-color:#582f0e;
+}
+.navbar {
+background-color: #ddb892;
+}
+#subinput {
+background-color: #f6e7cb;
+}
 </style>
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Pick Your Roast</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -48,8 +59,8 @@
       
     </ul>
     <form class="form-inline my-2 my-lg-0" action="search.do">
-      <input class="form-control mr-sm-2" name="id" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search by Id or Keyword</button>
+      <input id= "subinput" class="form-control mr-sm-2" name="id" type="search" placeholder="Search" aria-label="Search">
+      <button id= "searchbutton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search by Id or Keyword</button>
     </form>
   </div>
 </nav>
