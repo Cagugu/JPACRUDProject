@@ -7,6 +7,7 @@
 <title>Ready to indulge?</title>
 </head>
 <body>
+<%@ include file="../bootstrap.jsp" %>
 <h2>You selected: </h2>
 <h4>${coffee.name}: $${coffee.cost}</h4>
 <div><form action="home.do" method = "POST">

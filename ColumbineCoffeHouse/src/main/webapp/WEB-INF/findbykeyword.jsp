@@ -8,7 +8,7 @@
 <title>Menu Search</title>
 </head>
 <body>
-
+<%@ include file="bootstrap.jsp" %>
 <c:choose>
 <c:when test="${! empty keywordMatch}">
 <h2>These are the menu items that match your search:</h2>
@@ -17,8 +17,6 @@
 			<tr>
 				<th>Menu Item:</th>
 				<th>Name:</th>
-				<th>Size In Ounces:</th>
-				<th>Cost:</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,6 +38,8 @@
 </form>
 </c:otherwise>
 </c:choose>
+
+
 
 </body>
 </html>

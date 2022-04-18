@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.coffee.data.CoffeeDAO;
 import com.skilldistillery.coffee.entities.Coffee;
@@ -23,7 +24,6 @@ public class CoffeeController {
 		model.addAttribute("fullMenu", fullMenu);
 		return "home";
 	}
-	
 	@RequestMapping(path= "getCoffee.do")
 	public String coffeeFromIdSearch(int id, Model model) {
 		Coffee coffee = dao.findById(id);
@@ -37,8 +37,13 @@ public class CoffeeController {
 		return "findbykeyword";
 	}
 	
+	@RequestMapping(path="create.do", method=RequestMethod.GET)
+	public String create() {
+		return "createcoffee";
+	}
 	
-	@RequestMapping(path="createCoffee.do")
+	
+	@RequestMapping(path="createcoffee.do",  method=RequestMethod.POST)
 	public String createCoffee(Coffee coffee, Model model) {
 		Coffee newBrew = dao.createYourOwn(coffee);
 		model.addAttribute("coffee", newBrew);
@@ -61,13 +66,33 @@ public class CoffeeController {
 		return "coffee/updated";
 	}
 	
-	
 
-	
 	@RequestMapping(path="deleteCoffee.do", method=RequestMethod.POST)
 	public String deleteCoffee(int id) {
 		Boolean isDeleted = dao.deleteCoffee(id);
 		return "coffee/deleted";
+	}
+	
+	@RequestMapping(path = { "search.do" }, method = RequestMethod.GET)
+	public ModelAndView findById(String id) {
+		ModelAndView mv = new ModelAndView();
+		String keyword = id;
+
+		try {
+			int newId = Integer.parseInt(id);
+			Coffee coffee = dao.findById(newId);
+			mv.addObject("coffee", coffee);
+			mv.setViewName("coffee/coffeeview");
+
+		} catch (Exception e) {
+
+			List<Coffee> keywordMatch = dao.findByNameContaining(keyword);
+			mv.addObject("keywordMatch", keywordMatch);
+			mv.setViewName("findbykeyword");
+
+		}
+
+		return mv;
 	}
 	
 }

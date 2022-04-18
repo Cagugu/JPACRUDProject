@@ -8,6 +8,7 @@
 <title>Deleted</title>
 </head>
 <body>
+<%@ include file="../bootstrap.jsp" %>
 <c:choose>
 <c:when test="${isDeleted = true}">
 <h2>Menu item removed. </h2>

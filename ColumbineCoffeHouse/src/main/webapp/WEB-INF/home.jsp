@@ -9,38 +9,33 @@
 </head>
 <style>
 .button {
-	background-color: #e7e7e7;
-	color: black;
+	background-color: #ddb892;
+	color: #472d30;
 	padding: 5px 10px;
 	text-align: center;
 	font-size: 16px;
 }
+.menu-table {
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+min-width: 600px;
+
+}
+.menu-table thead tr{
+background-color: #ddb892;
+color: #472d30;
+}
+
 </style>
 <body>
 
 	<h1>Columbine Coffee House</h1>
 
-	<div>
-		<h3>Search by menu item number:</h3>
-		<form action="getCoffee.do" method="GET">
-			<input type="text" name=id /> <input type="submit" name="Show Item" />
-		</form>
-	</div>
-	<div>
-		<h3>Search menu with keyword:</h3>
-		<form action="findKeywordCoffee.do" method="GET">
-			<input type="text" name=keyword /> <input type="submit"
-				name="Show List" />
-		</form>
-	</div>
+<%@ include file="bootstrap.jsp" %>
 
 	<div>
-		<button class="button" onclick="document.location='createcoffee.html'">Create
-			Your Own Coffee</button>
-	</div>
-
-	<div>
-	<table>
+	<table class = "menu-table">
 		<thead>
 			<tr>
 				<th>Menu Item:</th>

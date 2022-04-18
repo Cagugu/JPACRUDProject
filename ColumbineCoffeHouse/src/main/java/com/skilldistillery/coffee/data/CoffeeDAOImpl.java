@@ -44,6 +44,14 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 
 	@Override
 	public Coffee createYourOwn(Coffee coffee) {
+		if (coffee.getSize().equals("Small")) {
+			coffee.setCost(5.25);
+		} else if (coffee.getSize().equals("Medium")) {
+			coffee.setCost(6.25);
+		}else if (coffee.getSize().equals("Large")){
+			coffee.setCost(7.00);
+		}
+
 		em.persist(coffee);
 		return coffee;
 	}
@@ -65,7 +73,6 @@ public class CoffeeDAOImpl implements CoffeeDAO {
 	@Override
 	public boolean deleteCoffee(int id) {
 		
-		//need resolution for allowing deletion of primary keys
 		boolean isDeleted = false;
 		Coffee coffee = em.find(Coffee.class, id);
 		if (coffee != null) {
