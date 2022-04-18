@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Make Your Own Coffee Creation</title>
 </head>
-<body>
+
+<body style = background-color:#e0edc5>
 <%@ include file="bootstrap.jsp" %>
 
 <h2>Plenty of options to make the perfect cup!</h2>

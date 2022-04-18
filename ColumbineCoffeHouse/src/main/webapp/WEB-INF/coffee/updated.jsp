@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Saving your updates!</title>
 </head>
-<body>
+<body style = background-color:#e0edc5>
 <%@ include file="../bootstrap.jsp" %>
 <h2>Your updated coffee creation: </h2>
 <h4>Name: ${coffee.name}, Size: ${coffee.size}, Steamy or Icey: ${coffee.hotOrIced }, Flavor: ${coffee.flavor }, Milk Choice: ${coffee.milkOption} </h4>
